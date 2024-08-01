@@ -16,7 +16,6 @@ pipeline {
                     credentialsId: 'private-key', 
                     disableHostKeyChecking: true,
                     installation: 'Ansible',
-                    inventory: 'dev.inv',
                     playbook: 'apache.yaml'
                 )
             }    

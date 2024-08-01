@@ -13,7 +13,7 @@ pipeline {
             steps {
                 // Execute Ansible playbook
                 ansiblePlaybook(
-                    credentialsId: 'ansible', 
+                    credentialsId: 'ansible--ssh', 
                     disableHostKeyChecking: true,
                     installation: 'Ansible',
                     inventory: 'dev.inv',

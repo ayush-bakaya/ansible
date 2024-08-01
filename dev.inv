@@ -1,3 +1,3 @@
 [webservers]
-server1 ubuntu=192.168.122.152 
+ubuntu 192.168.122.152 
 

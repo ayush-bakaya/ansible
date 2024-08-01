@@ -4,21 +4,17 @@ pipeline {
     stages {
         stage("SCM checkout") {
             steps {
-                // Checkout the repository
-                git branch: 'main', url: 'https://github.com/ayush-bakaya/ansible.git'
+                git 'https://github.com/Sada-Siva-Reddt/blog1.git',branch:'main'
             }
         }
         
         stage("Execute Ansible") {
             steps {
-                // Execute Ansible playbook
-                ansiblePlaybook(
-                    credentialsId: 'ansible--ssh', 
-                    disableHostKeyChecking: true,
-                    installation: 'Ansible',
-                    inventory: 'dev.inv',
-                    playbook: 'apache.yaml'
-                )
+                ansiblePlaybook credentialsId: 'private-key',
+                                 disableHostKeyChecking: true,
+                                 installation: 'Ansible',
+                                 inventory: 'dev.inv',
+                                 playbook: 'apache.yml'
             }    
         }    
     }

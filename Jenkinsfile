@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("SCM checkout") {
             steps {
-                git 'https://github.com/ayush-bakaya/ansible.git',branch:'main'
+                 git branch: 'main', url: 'https://github.com/ayush-bakaya/ansible.git'
             }
         }
         

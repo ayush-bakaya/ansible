@@ -1,9 +1,7 @@
 pipeline {
     agent any
 
-    environment {
-        ANSIBLE_SSH_PASS = credentials('ssh-password')
-        ANSIBLE_BECOME_PASS = credentials('ssh-password')
+   
     }
     stages {
         stage("SCM checkout") {
@@ -20,10 +18,7 @@ pipeline {
                     installation: 'Ansible',
                     inventory: 'dev.inv',
                     playbook: 'apache.yaml',
-                    extraVars: [
-                        ansible_ssh_pass: "${ANSIBLE_SSH_PASS}",
-                        ansible_become_pass: "${ANSIBLE_BECOME_PASS}"
-                    ]
+                
                 )
             }    
         }    

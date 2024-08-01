@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         ANSIBLE_SSH_PASS = credentials('ssh-password')
-        ANSIBLE_BECOME_PASS = credentials('sudo-password')
+        ANSIBLE_BECOME_PASS = credentials('ssh-password')
     }
     stages {
         stage("SCM checkout") {

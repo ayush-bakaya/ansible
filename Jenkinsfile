@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        ANSIBLE_SSH_PASS = credentials('ssh')
-        ANSIBLE_BECOME_PASS = credentials('ssh')
+        ANSIBLE_SSH_PASS = credentials('ssh-password')
+        ANSIBLE_BECOME_PASS = credentials('ssh-password')
     }
     stages {
         stage("SCM checkout") {
